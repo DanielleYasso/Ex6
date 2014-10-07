@@ -30,10 +30,16 @@ for line in filename:
     rest_dict[name] = rating
     rating_dict.setdefault(rating, []).append(name)
 
+print "***********************"
 print "Numerically sorted ratings:"
 for rating, restaurants in sorted(rating_dict.items()):
-    for restaurant in sorted(restaurants): # format and alphabetize within rating
+    for restaurant in sorted(restaurants): # alphabetize within rating
         print "Restaurant %s is rated at %s" % (restaurant, rating) 
+
+print "***********************"
+print "Numerically sorted using 2nd tuple item:"
+for restaurant, rating in sorted(rest_dict.items(), key=lambda x: x[1]):
+    print "Restaurant %s is rated at %s" % (restaurant, rating) 
 
 print "***********************"
 print "Alphabetized restaurants:"
