@@ -38,7 +38,10 @@ for rating, restaurants in sorted(rating_dict.items()):
 
 print "***********************"
 print "Numerically sorted using 2nd tuple item:"
-for restaurant, rating in sorted(rest_dict.items(), key=lambda x: x[1]):
+# sorts items alphabetically by 1st item (restaurant) in tuple
+# then sorts numerically on the 2nd item (rating) in the tuple
+sorted_tuple_list = sorted(sorted(rest_dict.items()), key=lambda x: x[1])
+for restaurant, rating in sorted_tuple_list:
     print "Restaurant %s is rated at %s" % (restaurant, rating) 
 
 print "***********************"
