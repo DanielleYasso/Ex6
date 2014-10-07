@@ -39,6 +39,3 @@ print "***********************"
 print "Alphabetized restaurants:"
 for restaurant, rating in sorted(rest_dict.items()):
     print "Restaurant %s is rated at %s" % (restaurant, rating) 
-
-
-# filtered_list = filter(lambda x: x % 2 == 0, number_list)
